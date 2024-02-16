@@ -3,29 +3,43 @@
 	import { onMount } from 'svelte';
 
 	interface $$Props extends HTMLVideoAttributes {
-		mediaStream?: MediaStream | undefined;
+		height?: number;
+		width?: number;
+		videoElement: HTMLVideoElement;
 	}
 
-	let videoElement: HTMLVideoElement;
+	export let height: number = 300;
+	export let width: number = 200;
 
 	/**
-	 * The `MediaStream` for the user's camera
-	 *
-	 * Can be `undefined` while pending request or denied access
+	 * Allow the "parent component" to access the `video` element by binding to this
 	 */
-	export let mediaStream: MediaStream | undefined = undefined;
+	export let videoElement: HTMLVideoElement;
 
 	onMount(async () => {
-		mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+		const mediaStream = await navigator.mediaDevices.getUserMedia({
+			audio: false,
+			video: true
+		});
 
 		videoElement.srcObject = mediaStream;
+
+		// Set the dimensions of the video stream
+		const primaryTrack = mediaStream.getTracks()[0];
+		primaryTrack.applyConstraints({
+			height,
+			width
+		});
 	});
 </script>
 
 <video
-	{...$$restProps}
 	bind:this={videoElement}
+	{height}
+	{width}
+	{...$$restProps}
 	on:loadeddata={({ currentTarget }) => {
 		currentTarget.play();
 	}}
-></video>
+>
+</video>
