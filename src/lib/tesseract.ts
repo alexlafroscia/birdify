@@ -1,5 +1,6 @@
 import { createWorker } from 'tesseract.js';
-import requestAnimationFrames from 'request-animation-frames';
+
+const worker = await createWorker('eng');
 
 interface IndicatorConfig {
 	x: number;
@@ -13,11 +14,6 @@ export function populateCanvas(
 	canvas: HTMLCanvasElement,
 	indicator: IndicatorConfig
 ): void {
-	const { height: heightInPx, width: widthInPx } = window.getComputedStyle(video);
-
-	const height = parseInt(heightInPx.replace('px', ''));
-	const width = parseInt(widthInPx.replace('px', ''));
-
 	canvas.height = indicator.height;
 	canvas.width = indicator.width;
 
@@ -57,17 +53,11 @@ export function getSnapshot(video: HTMLVideoElement, indicator: IndicatorConfig)
 	return canvas;
 }
 
-export async function ocr(video: HTMLVideoElement, indicator: IndicatorConfig) {
-	const worker = await createWorker('eng');
+export async function ocr(video: HTMLVideoElement, indicator: IndicatorConfig): Promise<string> {
+	const snapshot = getSnapshot(video, indicator);
+	const {
+		data: { text }
+	} = await worker.recognize(snapshot);
 
-	for await (const _timestamp of requestAnimationFrames()) {
-		const snapshot = getSnapshot(video, indicator);
-		const {
-			data: { text }
-		} = await worker.recognize(snapshot);
-
-		if (text) {
-			console.log({ text });
-		}
-	}
+	return text;
 }

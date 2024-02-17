@@ -16,6 +16,7 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/ungap__with-resolvers": "link:./types/ungap__with-resolvers",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"svelte": "^4.2.7",
@@ -27,6 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@ungap/with-resolvers": "^0.1.0",
 		"request-animation-frames": "^1.0.0",
 		"tesseract.js": "^5.0.4"
 	}

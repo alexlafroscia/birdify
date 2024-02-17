@@ -5,7 +5,8 @@
 	import CameraStream from '$lib/components/CameraStream.svelte';
 	import CardPositionIndicator from '$lib/components/CardPositionIndicator.svelte';
 
-	import { populateCanvas } from '$lib/tesseract';
+	import { populateCanvas, ocr } from '$lib/tesseract';
+	import { fromAsyncIterable, asyncDerrived } from '$lib/store';
 
 	let videoElement: HTMLVideoElement;
 	let canvasElement: HTMLCanvasElement;
@@ -16,6 +17,15 @@
 		height: 50,
 		width: 100
 	};
+
+	const ocrResults = asyncDerrived(fromAsyncIterable(requestAnimationFrames()), (_timestamp) => {
+		// `videoElement` can take a tick to initialize
+		if (!videoElement) {
+			return Promise.resolve('');
+		}
+
+		return ocr(videoElement, indicator);
+	});
 
 	onMount(async () => {
 		for await (const _timestamp of requestAnimationFrames()) {
@@ -47,12 +57,15 @@
 	</div>
 </main>
 
+<div>
+	{$ocrResults}
+</div>
+
 <style>
 	main {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-		height: 100vh;
 	}
 
 	.identifier {
