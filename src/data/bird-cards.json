@@ -1,0 +1,1340 @@
+[
+	{
+		"name": "Abbott's Booby"
+	},
+	{
+		"name": "Acorn Woodpecker"
+	},
+	{
+		"name": "American Avocet"
+	},
+	{
+		"name": "American Bittern"
+	},
+	{
+		"name": "American Coot"
+	},
+	{
+		"name": "American Crow"
+	},
+	{
+		"name": "American Goldfinch"
+	},
+	{
+		"name": "American Kestrel"
+	},
+	{
+		"name": "American Oystercatcher"
+	},
+	{
+		"name": "American Redstart"
+	},
+	{
+		"name": "American Robin"
+	},
+	{
+		"name": "American White Pelican"
+	},
+	{
+		"name": "American Woodcock"
+	},
+	{
+		"name": "Anhinga"
+	},
+	{
+		"name": "Anna's Hummingbird"
+	},
+	{
+		"name": "Ash-Throated Flycatcher"
+	},
+	{
+		"name": "Asian Emerald Dove"
+	},
+	{
+		"name": "Asian Koel"
+	},
+	{
+		"name": "Atlantic Puffin"
+	},
+	{
+		"name": "Audouin's Gull"
+	},
+	{
+		"name": "Australasian Pipit"
+	},
+	{
+		"name": "Australasian Shoveler"
+	},
+	{
+		"name": "Australian Ibis"
+	},
+	{
+		"name": "Australian Magpie"
+	},
+	{
+		"name": "Australian Owlet-Nightjar"
+	},
+	{
+		"name": "Australian Raven"
+	},
+	{
+		"name": "Australian Reed Warbler"
+	},
+	{
+		"name": "Australian Shelduck"
+	},
+	{
+		"name": "Australian Zebra Finch"
+	},
+	{
+		"name": "Azure Tit"
+	},
+	{
+		"name": "Baird's Sparrow"
+	},
+	{
+		"name": "Bald Eagle"
+	},
+	{
+		"name": "Baltimore Oriole"
+	},
+	{
+		"name": "Barn Owl"
+	},
+	{
+		"name": "Barn Swallow"
+	},
+	{
+		"name": "Barred Owl"
+	},
+	{
+		"name": "Barrow's Goldeneye"
+	},
+	{
+		"name": "Baya Weaver"
+	},
+	{
+		"name": "Bearded Reedling"
+	},
+	{
+		"name": "Bell's Vireo"
+	},
+	{
+		"name": "Belted Kingfisher"
+	},
+	{
+		"name": "Bewick's Wren"
+	},
+	{
+		"name": "Black Drongo"
+	},
+	{
+		"name": "Black Noddy"
+	},
+	{
+		"name": "Black Redstart"
+	},
+	{
+		"name": "Black Skimmer"
+	},
+	{
+		"name": "Black Stork"
+	},
+	{
+		"name": "Black Swan"
+	},
+	{
+		"name": "Black Tern"
+	},
+	{
+		"name": "Black Vulture"
+	},
+	{
+		"name": "Black Woodpecker"
+	},
+	{
+		"name": "Black-Bellied Whistling-Duck"
+	},
+	{
+		"name": "Black-Billed Magpie"
+	},
+	{
+		"name": "Black-Chinned Hummingbird"
+	},
+	{
+		"name": "Black-Crowned Night-Heron"
+	},
+	{
+		"name": "Black-Headed Gull"
+	},
+	{
+		"name": "Black-Naped Oriole"
+	},
+	{
+		"name": "Black-Necked Stilt"
+	},
+	{
+		"name": "Black-Shouldered Kite"
+	},
+	{
+		"name": "Black-Tailed Godwit"
+	},
+	{
+		"name": "Black-Throated Diver"
+	},
+	{
+		"name": "Blue Grosbeak"
+	},
+	{
+		"name": "Blue Jay"
+	},
+	{
+		"name": "Blue Rock-Thrush"
+	},
+	{
+		"name": "Blue-Gray Gnatcatcher"
+	},
+	{
+		"name": "Blue-Winged Warbler"
+	},
+	{
+		"name": "Bluethroat"
+	},
+	{
+		"name": "Blyth's Hornbill"
+	},
+	{
+		"name": "Bobolink"
+	},
+	{
+		"name": "Bonelli's Eagle"
+	},
+	{
+		"name": "Brahminy Kite"
+	},
+	{
+		"name": "Brambling"
+	},
+	{
+		"name": "Brant"
+	},
+	{
+		"name": "Brewer's Blackbird"
+	},
+	{
+		"name": "Broad-Winged Hawk"
+	},
+	{
+		"name": "Brolga"
+	},
+	{
+		"name": "Bronzed Cowbird"
+	},
+	{
+		"name": "Brown Falcon"
+	},
+	{
+		"name": "Brown Pelican"
+	},
+	{
+		"name": "Brown Shrike"
+	},
+	{
+		"name": "Brown-Headed Cowbird"
+	},
+	{
+		"name": "Budgerigar"
+	},
+	{
+		"name": "Bullfinch"
+	},
+	{
+		"name": "Burrowing Owl"
+	},
+	{
+		"name": "Bushtit"
+	},
+	{
+		"name": "California Condor"
+	},
+	{
+		"name": "California Quail"
+	},
+	{
+		"name": "Canada Goose"
+	},
+	{
+		"name": "Canvasback"
+	},
+	{
+		"name": "Carolina Chickadee"
+	},
+	{
+		"name": "Carolina Wren"
+	},
+	{
+		"name": "Carrion Crow"
+	},
+	{
+		"name": "Cassin's Finch"
+	},
+	{
+		"name": "Cassin's Sparrow"
+	},
+	{
+		"name": "Cedar Waxwing"
+	},
+	{
+		"name": "Cerulean Warbler"
+	},
+	{
+		"name": "Cetti's Warbler"
+	},
+	{
+		"name": "Chestnut-Collared Longspur"
+	},
+	{
+		"name": "Chihuahuan Raven"
+	},
+	{
+		"name": "Chimney Swift"
+	},
+	{
+		"name": "Chipping Sparrow"
+	},
+	{
+		"name": "Clark's Grebe"
+	},
+	{
+		"name": "Clark's Nutcracker"
+	},
+	{
+		"name": "Coal Tit"
+	},
+	{
+		"name": "Cockatiel"
+	},
+	{
+		"name": "Common Blackbird"
+	},
+	{
+		"name": "Common Buzzard"
+	},
+	{
+		"name": "Common Chaffinch"
+	},
+	{
+		"name": "Common Chiffchaff"
+	},
+	{
+		"name": "Common Cuckoo"
+	},
+	{
+		"name": "Common Goldeneye"
+	},
+	{
+		"name": "Common Grackle"
+	},
+	{
+		"name": "Common Green Magpie"
+	},
+	{
+		"name": "Common Iora"
+	},
+	{
+		"name": "Common Kingfisher"
+	},
+	{
+		"name": "Common Little Bittern"
+	},
+	{
+		"name": "Common Loon"
+	},
+	{
+		"name": "Common Merganser"
+	},
+	{
+		"name": "Common Moorhen"
+	},
+	{
+		"name": "Common Myna"
+	},
+	{
+		"name": "Common Nighthawk"
+	},
+	{
+		"name": "Common Nightingale"
+	},
+	{
+		"name": "Common Raven"
+	},
+	{
+		"name": "Common Sandpiper"
+	},
+	{
+		"name": "Common Starling"
+	},
+	{
+		"name": "Common Swift"
+	},
+	{
+		"name": "Common Tailorbird"
+	},
+	{
+		"name": "Common Teal"
+	},
+	{
+		"name": "Common Yellowthroat"
+	},
+	{
+		"name": "Cooper's Hawk"
+	},
+	{
+		"name": "Coppersmith Barbet"
+	},
+	{
+		"name": "Corsican Nuthatch"
+	},
+	{
+		"name": "Count Raggi's Bird-of-Paradise"
+	},
+	{
+		"name": "Crested Ibis"
+	},
+	{
+		"name": "Crested Lark"
+	},
+	{
+		"name": "Crested Pigeon"
+	},
+	{
+		"name": "Crimson Chat"
+	},
+	{
+		"name": "Dark-Eyed Junco"
+	},
+	{
+		"name": "Desert Finch"
+	},
+	{
+		"name": "Desert Wheatear"
+	},
+	{
+		"name": "Dickcissel"
+	},
+	{
+		"name": "Double-Crested Cormorant"
+	},
+	{
+		"name": "Downy Woodpecker"
+	},
+	{
+		"name": "Dunnock"
+	},
+	{
+		"name": "Eastern Bluebird"
+	},
+	{
+		"name": "Eastern Imperial Eagle"
+	},
+	{
+		"name": "Eastern Kingbird"
+	},
+	{
+		"name": "Eastern Phoebe"
+	},
+	{
+		"name": "Eastern Rosella"
+	},
+	{
+		"name": "Eastern Screech-Owl"
+	},
+	{
+		"name": "Eastern Whipbird"
+	},
+	{
+		"name": "Eleonora's Falcon"
+	},
+	{
+		"name": "Emu"
+	},
+	{
+		"name": "Eurasian Collared-Dove"
+	},
+	{
+		"name": "Eurasian Coot"
+	},
+	{
+		"name": "Eurasian Eagle-Owl"
+	},
+	{
+		"name": "Eurasian Golden Oriole"
+	},
+	{
+		"name": "Eurasian Green Woodpecker"
+	},
+	{
+		"name": "Eurasian Hobby"
+	},
+	{
+		"name": "Eurasian Hoopoe"
+	},
+	{
+		"name": "Eurasian Jay"
+	},
+	{
+		"name": "Eurasian Kestrel"
+	},
+	{
+		"name": "Eurasian Magpie"
+	},
+	{
+		"name": "Eurasian Marsh-Harrier"
+	},
+	{
+		"name": "Eurasian Nutcracker"
+	},
+	{
+		"name": "Eurasian Nuthatch"
+	},
+	{
+		"name": "Eurasian Sparrowhawk"
+	},
+	{
+		"name": "Eurasian Tree Sparrow"
+	},
+	{
+		"name": "Eurasian Treecreeper"
+	},
+	{
+		"name": "European Bee-Eater"
+	},
+	{
+		"name": "European Goldfinch"
+	},
+	{
+		"name": "European Honey Buzzard"
+	},
+	{
+		"name": "European Robin"
+	},
+	{
+		"name": "European Roller"
+	},
+	{
+		"name": "European Turtle Dove"
+	},
+	{
+		"name": "Ferruginous Hawk"
+	},
+	{
+		"name": "Fire-Fronted Serin"
+	},
+	{
+		"name": "Fish Crow"
+	},
+	{
+		"name": "Forest Owlet"
+	},
+	{
+		"name": "Forster's Tern"
+	},
+	{
+		"name": "Franklin's Gull"
+	},
+	{
+		"name": "Galah"
+	},
+	{
+		"name": "Goldcrest"
+	},
+	{
+		"name": "Golden Eagle"
+	},
+	{
+		"name": "Golden Pheasant"
+	},
+	{
+		"name": "Golden-Headed Cisticola"
+	},
+	{
+		"name": "Gould's Finch"
+	},
+	{
+		"name": "Graceful Prinia"
+	},
+	{
+		"name": "Grandala"
+	},
+	{
+		"name": "Grasshopper Sparrow"
+	},
+	{
+		"name": "Gray Catbird"
+	},
+	{
+		"name": "Gray Wagtail"
+	},
+	{
+		"name": "Great Blue Heron"
+	},
+	{
+		"name": "Great Cormorant"
+	},
+	{
+		"name": "Great Crested Flycatcher"
+	},
+	{
+		"name": "Great Crested Grebe"
+	},
+	{
+		"name": "Great Egret"
+	},
+	{
+		"name": "Great Hornbill"
+	},
+	{
+		"name": "Great Horned Owl"
+	},
+	{
+		"name": "Great Indian Bustard"
+	},
+	{
+		"name": "Great Spotted Woodpecker"
+	},
+	{
+		"name": "Great Tit"
+	},
+	{
+		"name": "Greater Adjutant"
+	},
+	{
+		"name": "Greater Flamingo"
+	},
+	{
+		"name": "Greater Prairie-Chicken"
+	},
+	{
+		"name": "Greater Roadrunner"
+	},
+	{
+		"name": "Green Bee-Eater"
+	},
+	{
+		"name": "Green Heron"
+	},
+	{
+		"name": "Green Pheasant"
+	},
+	{
+		"name": "Green Pygmy-Goose"
+	},
+	{
+		"name": "Grey Butcherbird"
+	},
+	{
+		"name": "Grey Heron"
+	},
+	{
+		"name": "Grey Shrikethrush"
+	},
+	{
+		"name": "Grey Teal"
+	},
+	{
+		"name": "Grey Warbler"
+	},
+	{
+		"name": "Grey-Headed Mannikin"
+	},
+	{
+		"name": "Greylag Goose"
+	},
+	{
+		"name": "Griffon Vulture"
+	},
+	{
+		"name": "Hawfinch"
+	},
+	{
+		"name": "Hermit Thrush"
+	},
+	{
+		"name": "Himalayan Monal"
+	},
+	{
+		"name": "Hooded Crow"
+	},
+	{
+		"name": "Hooded Merganser"
+	},
+	{
+		"name": "Hooded Warbler"
+	},
+	{
+		"name": "Horned Lark"
+	},
+	{
+		"name": "Horsfield's Bronze-Cuckoo"
+	},
+	{
+		"name": "Horsfield's Bushlark"
+	},
+	{
+		"name": "House Crow"
+	},
+	{
+		"name": "House Finch"
+	},
+	{
+		"name": "House Sparrow"
+	},
+	{
+		"name": "House Wren"
+	},
+	{
+		"name": "Ibisbill"
+	},
+	{
+		"name": "Inca Dove"
+	},
+	{
+		"name": "Indian Peafowl"
+	},
+	{
+		"name": "Indian Vulture"
+	},
+	{
+		"name": "Indigo Bunting"
+	},
+	{
+		"name": "Juniper Titmouse"
+	},
+	{
+		"name": "Kākāpо̄"
+	},
+	{
+		"name": "Kea"
+	},
+	{
+		"name": "Kelp Gull"
+	},
+	{
+		"name": "Kererū"
+	},
+	{
+		"name": "Killdeer"
+	},
+	{
+		"name": "King Rail"
+	},
+	{
+		"name": "Korimako"
+	},
+	{
+		"name": "Large-Billed Crow"
+	},
+	{
+		"name": "Laughing Kookaburra"
+	},
+	{
+		"name": "Lazuli Bunting"
+	},
+	{
+		"name": "Lesser Frigatebird"
+	},
+	{
+		"name": "Lesser Whitethroat"
+	},
+	{
+		"name": "Lewin's Honeyeater"
+	},
+	{
+		"name": "Lincoln's Sparrow"
+	},
+	{
+		"name": "Little Bustard"
+	},
+	{
+		"name": "Little Egret"
+	},
+	{
+		"name": "Little Grebe"
+	},
+	{
+		"name": "Little Owl"
+	},
+	{
+		"name": "Little Penguin"
+	},
+	{
+		"name": "Little Pied Cormorant"
+	},
+	{
+		"name": "Little Ringed Plover"
+	},
+	{
+		"name": "Loggerhead Shrike"
+	},
+	{
+		"name": "Long-Tailed Tit"
+	},
+	{
+		"name": "Magpie-Lark"
+	},
+	{
+		"name": "Major Mitchell's Cockatoo"
+	},
+	{
+		"name": "Mallard"
+	},
+	{
+		"name": "Malleefowl"
+	},
+	{
+		"name": "Mandarin Duck"
+	},
+	{
+		"name": "Maned Duck"
+	},
+	{
+		"name": "Many-Colored Fruit-Dove"
+	},
+	{
+		"name": "Masked Lapwing"
+	},
+	{
+		"name": "Mississippi Kite"
+	},
+	{
+		"name": "Mistletoebird"
+	},
+	{
+		"name": "Moltoni's Warbler"
+	},
+	{
+		"name": "Montagu's Harrier"
+	},
+	{
+		"name": "Mountain Bluebird"
+	},
+	{
+		"name": "Mountain Chickadee"
+	},
+	{
+		"name": "Mourning Dove"
+	},
+	{
+		"name": "Musk Duck"
+	},
+	{
+		"name": "Mute Swan"
+	},
+	{
+		"name": "New Holland Honeyeater"
+	},
+	{
+		"name": "Noisy Miner"
+	},
+	{
+		"name": "North Island Brown Kiwi"
+	},
+	{
+		"name": "Northern Bobwhite"
+	},
+	{
+		"name": "Northern Cardinal"
+	},
+	{
+		"name": "Northern Flicker"
+	},
+	{
+		"name": "Northern Gannet"
+	},
+	{
+		"name": "Northern Goshawk"
+	},
+	{
+		"name": "Northern Harrier"
+	},
+	{
+		"name": "Northern Mockingbird"
+	},
+	{
+		"name": "Northern Shoveler"
+	},
+	{
+		"name": "Olive-Backed Sunbird"
+	},
+	{
+		"name": "Orange-Footed Scrubfowl"
+	},
+	{
+		"name": "Oriental Bay-Owl"
+	},
+	{
+		"name": "Oriental Magpie-Robin"
+	},
+	{
+		"name": "Osprey"
+	},
+	{
+		"name": "Pacific Black Duck"
+	},
+	{
+		"name": "Painted Bunting"
+	},
+	{
+		"name": "Painted Whitestart"
+	},
+	{
+		"name": "Parrot Crossbill"
+	},
+	{
+		"name": "Peaceful Dove"
+	},
+	{
+		"name": "Peregrine Falcon"
+	},
+	{
+		"name": "Pesquet's Parrot"
+	},
+	{
+		"name": "Pheasant Coucal"
+	},
+	{
+		"name": "Philippine Eagle"
+	},
+	{
+		"name": "Pied-Billed Grebe"
+	},
+	{
+		"name": "Pileated Woodpecker"
+	},
+	{
+		"name": "Pine Siskin"
+	},
+	{
+		"name": "Pink-Eared Duck"
+	},
+	{
+		"name": "Plains-Wanderer"
+	},
+	{
+		"name": "Plumbeous Redstart"
+	},
+	{
+		"name": "Princess Stephanie's Astrapia"
+	},
+	{
+		"name": "Prothonotary Warbler"
+	},
+	{
+		"name": "Pūkeko"
+	},
+	{
+		"name": "Purple Gallinule"
+	},
+	{
+		"name": "Purple Heron"
+	},
+	{
+		"name": "Purple Martin"
+	},
+	{
+		"name": "Pygmy Nuthatch"
+	},
+	{
+		"name": "Rainbow Lorikeet"
+	},
+	{
+		"name": "Red Avadavat"
+	},
+	{
+		"name": "Red Crossbill"
+	},
+	{
+		"name": "Red Junglefowl"
+	},
+	{
+		"name": "Red Kite"
+	},
+	{
+		"name": "Red Knot"
+	},
+	{
+		"name": "Red Wattlebird"
+	},
+	{
+		"name": "Red-Backed Fairywren"
+	},
+	{
+		"name": "Red-Backed Shrike"
+	},
+	{
+		"name": "Red-Bellied Woodpecker"
+	},
+	{
+		"name": "Red-Breasted Merganser"
+	},
+	{
+		"name": "Red-Breasted Nuthatch"
+	},
+	{
+		"name": "Red-Capped Robin"
+	},
+	{
+		"name": "Red-Cockaded Woodpecker"
+	},
+	{
+		"name": "Red-Crowned Crane"
+	},
+	{
+		"name": "Red-Eyed Vireo"
+	},
+	{
+		"name": "Red-Headed Woodpecker"
+	},
+	{
+		"name": "Red-Legged Partridge"
+	},
+	{
+		"name": "Red-Necked Avocet"
+	},
+	{
+		"name": "Red-Shouldered Hawk"
+	},
+	{
+		"name": "Red-Tailed Hawk"
+	},
+	{
+		"name": "Red-Vented Bulbul"
+	},
+	{
+		"name": "Red-Wattled Lapwing"
+	},
+	{
+		"name": "Red-Winged Blackbird"
+	},
+	{
+		"name": "Red-Winged Parrot"
+	},
+	{
+		"name": "Regent Bowerbird"
+	},
+	{
+		"name": "Rhinoceros Auklet"
+	},
+	{
+		"name": "Ring-Billed Gull"
+	},
+	{
+		"name": "Rock Pigeon"
+	},
+	{
+		"name": "Rook"
+	},
+	{
+		"name": "Rose-Breasted Grosbeak"
+	},
+	{
+		"name": "Rose-Ringed Parakeet"
+	},
+	{
+		"name": "Roseate Spoonbill"
+	},
+	{
+		"name": "Rosy Starling"
+	},
+	{
+		"name": "Royal Spoonbill"
+	},
+	{
+		"name": "Ruby-Crowned Kinglet"
+	},
+	{
+		"name": "Ruby-Throated Hummingbird"
+	},
+	{
+		"name": "Ruddy Duck"
+	},
+	{
+		"name": "Ruddy Shelduck"
+	},
+	{
+		"name": "Ruff"
+	},
+	{
+		"name": "Rufous Night-Heron"
+	},
+	{
+		"name": "Rufous Owl"
+	},
+	{
+		"name": "Rufous-Banded Honeyeater"
+	},
+	{
+		"name": "Sacred Kingfisher"
+	},
+	{
+		"name": "Sandhill Crane"
+	},
+	{
+		"name": "Sarus Crane"
+	},
+	{
+		"name": "Satyr Tragopan"
+	},
+	{
+		"name": "Savannah Sparrow"
+	},
+	{
+		"name": "Savi's Warbler"
+	},
+	{
+		"name": "Say's Phoebe"
+	},
+	{
+		"name": "Scaled Quail"
+	},
+	{
+		"name": "Scaly-Breasted Munia"
+	},
+	{
+		"name": "Scissor-Tailed Flycatcher"
+	},
+	{
+		"name": "Short-Toed Treecreeper"
+	},
+	{
+		"name": "Silvereye"
+	},
+	{
+		"name": "Small Minivet"
+	},
+	{
+		"name": "Smew"
+	},
+	{
+		"name": "Snow Bunting"
+	},
+	{
+		"name": "Snowy Egret"
+	},
+	{
+		"name": "Snowy Owl"
+	},
+	{
+		"name": "Song Sparrow"
+	},
+	{
+		"name": "South Island Robin"
+	},
+	{
+		"name": "Southern Cassowary"
+	},
+	{
+		"name": "Spangled Drongo"
+	},
+	{
+		"name": "Splendid Fairywren"
+	},
+	{
+		"name": "Spoon-Billed Sandpiper"
+	},
+	{
+		"name": "Spotless Crake"
+	},
+	{
+		"name": "Spotted Dove"
+	},
+	{
+		"name": "Spotted Owl"
+	},
+	{
+		"name": "Spotted Sandpiper"
+	},
+	{
+		"name": "Spotted Towhee"
+	},
+	{
+		"name": "Sprague's Pipit"
+	},
+	{
+		"name": "Squacco Heron"
+	},
+	{
+		"name": "Sri Lanka Blue-Magpie"
+	},
+	{
+		"name": "Sri Lanka Frogmouth"
+	},
+	{
+		"name": "Steller's Jay"
+	},
+	{
+		"name": "Stork-Billed Kingfisher"
+	},
+	{
+		"name": "Stubble Quail"
+	},
+	{
+		"name": "Sulphur-Crested Cockatoo"
+	},
+	{
+		"name": "Superb Lyrebird"
+	},
+	{
+		"name": "Swainson's Hawk"
+	},
+	{
+		"name": "Tawny Frogmouth"
+	},
+	{
+		"name": "Thekla's Lark"
+	},
+	{
+		"name": "Tree Swallow"
+	},
+	{
+		"name": "Trumpeter Finch"
+	},
+	{
+		"name": "Trumpeter Swan"
+	},
+	{
+		"name": "Tufted Titmouse"
+	},
+	{
+		"name": "Tūī"
+	},
+	{
+		"name": "Turkey Vulture"
+	},
+	{
+		"name": "Twite"
+	},
+	{
+		"name": "Vaux's Swift"
+	},
+	{
+		"name": "Verditer Flycatcher"
+	},
+	{
+		"name": "Violet Cuckoo"
+	},
+	{
+		"name": "Violet-Green Swallow"
+	},
+	{
+		"name": "Wedge-Tailed Eagle"
+	},
+	{
+		"name": "Welcome Swallow"
+	},
+	{
+		"name": "Western Meadowlark"
+	},
+	{
+		"name": "Western Tanager"
+	},
+	{
+		"name": "White Stork"
+	},
+	{
+		"name": "White Wagtail"
+	},
+	{
+		"name": "White-Backed Woodpecker"
+	},
+	{
+		"name": "White-Bellied Sea-Eagle"
+	},
+	{
+		"name": "White-Breasted Nuthatch"
+	},
+	{
+		"name": "White-Breasted Woodswallow"
+	},
+	{
+		"name": "White-Browed Tit-Warbler"
+	},
+	{
+		"name": "White-Crested Laughingthrush"
+	},
+	{
+		"name": "White-Crowned Sparrow"
+	},
+	{
+		"name": "White-Faced Heron"
+	},
+	{
+		"name": "White-Faced Ibis"
+	},
+	{
+		"name": "White-Headed Duck"
+	},
+	{
+		"name": "White-Throated Dipper"
+	},
+	{
+		"name": "White-Throated Kingfisher"
+	},
+	{
+		"name": "White-Throated Swift"
+	},
+	{
+		"name": "Whooping Crane"
+	},
+	{
+		"name": "Wild Turkey"
+	},
+	{
+		"name": "Willet"
+	},
+	{
+		"name": "Willie-Wagtail"
+	},
+	{
+		"name": "Willow Tit"
+	},
+	{
+		"name": "Wilson's Snipe"
+	},
+	{
+		"name": "Wilson's Storm Petrel"
+	},
+	{
+		"name": "Wood Duck"
+	},
+	{
+		"name": "Wood Stork"
+	},
+	{
+		"name": "Wrybill"
+	},
+	{
+		"name": "Yellow Bittern"
+	},
+	{
+		"name": "Yellow-Bellied Sapsucker"
+	},
+	{
+		"name": "Yellow-Billed Cuckoo"
+	},
+	{
+		"name": "Yellow-Breasted Chat"
+	},
+	{
+		"name": "Yellow-Headed Blackbird"
+	},
+	{
+		"name": "Yellow-Rumped Warbler"
+	},
+	{
+		"name": "Yellowhammer"
+	},
+	{
+		"name": "Zebra Dove"
+	}
+]

@@ -6,6 +6,7 @@
 
 	import { ocr } from '$lib/tesseract';
 	import { fromAsyncIterable, asyncDerrived } from '$lib/store';
+	import { closestBird } from '$lib/birds';
 
 	let videoElement: HTMLVideoElement;
 	let canvasElement: HTMLCanvasElement;
@@ -27,8 +28,12 @@
 
 			const result = await ocr(videoElement, indicator, canvasElement);
 
-			// Apply any clean-up that we can on our end
-			return result.split('\n')[0];
+			// The scientific name is right under the "common" name
+			// We want to ignore that if it's there
+			const [firstResultLine] = result.split('\n');
+
+			// Match the OCR input against the bird name DB
+			return closestBird(firstResultLine);
 		}
 	);
 </script>
