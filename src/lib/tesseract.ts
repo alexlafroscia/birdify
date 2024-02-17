@@ -45,16 +45,22 @@ export function populateCanvas(
 	);
 }
 
-export function getSnapshot(video: HTMLVideoElement, indicator: IndicatorConfig) {
-	const canvas = document.createElement('canvas');
-
+export function getSnapshot(
+	video: HTMLVideoElement,
+	indicator: IndicatorConfig,
+	canvas: HTMLCanvasElement = document.createElement('canvas')
+) {
 	populateCanvas(video, canvas, indicator);
 
 	return canvas;
 }
 
-export async function ocr(video: HTMLVideoElement, indicator: IndicatorConfig): Promise<string> {
-	const snapshot = getSnapshot(video, indicator);
+export async function ocr(
+	video: HTMLVideoElement,
+	indicator: IndicatorConfig,
+	canvas?: HTMLCanvasElement
+): Promise<string> {
+	const snapshot = getSnapshot(video, indicator, canvas);
 	const {
 		data: { text }
 	} = await worker.recognize(snapshot);

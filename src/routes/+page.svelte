@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import requestAnimationFrames from 'request-animation-frames';
 
 	import CameraStream from '$lib/components/CameraStream.svelte';
 	import CardPositionIndicator from '$lib/components/CardPositionIndicator.svelte';
 
-	import { populateCanvas, ocr } from '$lib/tesseract';
+	import { ocr } from '$lib/tesseract';
 	import { fromAsyncIterable, asyncDerrived } from '$lib/store';
 
 	let videoElement: HTMLVideoElement;
@@ -18,20 +17,20 @@
 		width: 100
 	};
 
-	const ocrResults = asyncDerrived(fromAsyncIterable(requestAnimationFrames()), (_timestamp) => {
-		// `videoElement` can take a tick to initialize
-		if (!videoElement) {
-			return Promise.resolve('');
-		}
+	const ocrResultStore = asyncDerrived(
+		fromAsyncIterable(requestAnimationFrames()),
+		async (_timestamp) => {
+			// DOM nodes will take a tick to be present
+			if (!videoElement || !canvasElement) {
+				return '';
+			}
 
-		return ocr(videoElement, indicator);
-	});
+			const result = await ocr(videoElement, indicator, canvasElement);
 
-	onMount(async () => {
-		for await (const _timestamp of requestAnimationFrames()) {
-			populateCanvas(videoElement, canvasElement, indicator);
+			// Apply any clean-up that we can on our end
+			return result.split('\n')[0];
 		}
-	});
+	);
 </script>
 
 <main>
@@ -58,7 +57,7 @@
 </main>
 
 <div>
-	{$ocrResults}
+	{$ocrResultStore}
 </div>
 
 <style>
