@@ -12,10 +12,10 @@
 	let canvasElement: HTMLCanvasElement;
 
 	const indicator = {
-		x: 80,
-		y: 5,
-		height: 50,
-		width: 100
+		x: 85,
+		y: 15,
+		height: 30,
+		width: 90
 	};
 
 	const ocrResultStore = asyncDerrived(
@@ -56,7 +56,7 @@
 		</div>
 	</div>
 
-	<div>
+	<div class="debug-canvas">
 		<canvas bind:this={canvasElement} />
 	</div>
 </main>
@@ -83,5 +83,9 @@
 		left: var(--x);
 		height: var(--height);
 		width: var(--width);
+	}
+
+	.debug-canvas {
+		display: none;
 	}
 </style>
