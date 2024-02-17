@@ -33,5 +33,6 @@
 		"request-animation-frames": "^1.0.0",
 		"tesseract.js": "^5.0.4",
 		"wikipedia": "^2.1.2"
-	}
+	},
+	"packageManager": "yarn@4.1.0"
 }
