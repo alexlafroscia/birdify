@@ -2,6 +2,20 @@ import { createWorker } from 'tesseract.js';
 
 const worker = await createWorker('eng');
 
+worker.setParameters({
+	// Provide the characters to look for
+	tessedit_char_whitelist: [
+		// Upper-case letters
+		'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+		// Lower-case letters
+		'abcdefghijklmnopqrstuvwxyz',
+		// Whitespace
+		' ',
+		// Punctuation
+		"'"
+	].join('')
+});
+
 interface IndicatorConfig {
 	x: number;
 	y: number;
