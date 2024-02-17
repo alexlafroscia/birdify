@@ -39,6 +39,10 @@
 </script>
 
 <main>
+	<div class="bird-info">
+		{$ocrResultStore}
+	</div>
+
 	<div class="identifier">
 		<div class="camera-stream">
 			<CameraStream bind:videoElement />
@@ -61,15 +65,18 @@
 	</div>
 </main>
 
-<div>
-	{$ocrResultStore}
-</div>
-
 <style>
 	main {
 		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
+		flex-direction: column;
+		align-items: center;
+
+		/* Match page height */
+		height: 100vh;
+	}
+
+	.bird-info {
+		flex-grow: 1;
 	}
 
 	.identifier {
