@@ -5,6 +5,7 @@ import allBirds from '../data/bird-cards.json';
 const birdNames = allBirds.map((bird) => bird.name);
 
 export function closestBird(input: string): string {
-	// @ts-expect-error
-	return closestMatch(input, birdNames);
+	// We can safely assert this isn't null; that's only the case when the
+	// input array is empty
+	return closestMatch(input, birdNames)!;
 }

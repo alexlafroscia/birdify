@@ -695,7 +695,7 @@ __metadata:
     "@sveltejs/vite-plugin-svelte": "npm:^3.0.0"
     "@types/ungap__with-resolvers": "link:./types/ungap__with-resolvers"
     "@ungap/with-resolvers": "npm:^0.1.0"
-    closest-match: "npm:^1.3.3"
+    closest-match: "patch:closest-match@npm%3A1.3.3#~/.yarn/patches/closest-match-npm-1.3.3-c9baeca09a.patch"
     prettier: "npm:^3.1.1"
     prettier-plugin-svelte: "npm:^3.1.2"
     request-animation-frames: "npm:^1.0.0"
@@ -842,10 +842,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"closest-match@npm:^1.3.3":
+"closest-match@npm:1.3.3":
   version: 1.3.3
   resolution: "closest-match@npm:1.3.3"
   checksum: 80f13ddee33a683ef9cffb569b84c2367d12c86f4061ea1b696a84c9a9d0a91de6154c3c8f9c44aed909cd66f87cdfbb0b1480028cee9a984fbafa14b2765052
+  languageName: node
+  linkType: hard
+
+"closest-match@patch:closest-match@npm%3A1.3.3#~/.yarn/patches/closest-match-npm-1.3.3-c9baeca09a.patch":
+  version: 1.3.3
+  resolution: "closest-match@patch:closest-match@npm%3A1.3.3#~/.yarn/patches/closest-match-npm-1.3.3-c9baeca09a.patch::version=1.3.3&hash=6d0258"
+  checksum: 46c9e5ad9693ae8597c4398670b947aa9a761e2c6b65fd66a15de66c595c9f82001393c2e337a068d3ce8b81f0146b0453106b29eff1554ecb1156c3752a3ea1
   languageName: node
   linkType: hard
 

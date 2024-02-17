@@ -1,0 +1,36 @@
+diff --git a/lib/index.d.ts b/lib/index.d.ts
+index 88b4a6d51a1ea25d5d46a57e30f5ffbf016beddc..7dafc5e90334491f9a33f4acbef934980ec7c814 100644
+--- a/lib/index.d.ts
++++ b/lib/index.d.ts
+@@ -1,2 +1,13 @@
+ export declare const distance: (a: string, b: string) => number;
+-export declare const closestMatch: (target: string, array: string[], showOccurrences?: boolean) => string | string[] | null;
++
++export function closestMatch(target: string, array: string[]): string | null;
++export function closestMatch(
++  target: string,
++  array: string[],
++  showOccurrences: false
++): string | null;
++export function closestMatch(
++  target: string,
++  array: string[],
++  showOccurrences: true
++): string[] | null;
+diff --git a/lib/methods/closestMatch.d.ts b/lib/methods/closestMatch.d.ts
+index 74722f4ab0cc4b128f024e3be39cc4ec03cbb80b..e9448ee77082a86df414f8a35fd18983051c774e 100644
+--- a/lib/methods/closestMatch.d.ts
++++ b/lib/methods/closestMatch.d.ts
+@@ -1 +1,11 @@
+-export declare const closestMatch: (target: string, array: string[], showOccurrences?: boolean) => string | string[] | null;
++export function closestMatch(target: string, array: string[]): string | null;
++export function closestMatch(
++  target: string,
++  array: string[],
++  showOccurrences: false
++): string | null;
++export function closestMatch(
++  target: string,
++  array: string[],
++  showOccurrences: true
++): string[] | null;
