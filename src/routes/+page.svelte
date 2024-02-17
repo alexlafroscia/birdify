@@ -7,6 +7,7 @@
 	import { ocr } from '$lib/tesseract';
 	import { fromAsyncIterable, asyncDerrived } from '$lib/store';
 	import { closestBird } from '$lib/birds';
+	import * as wiki from '$lib/wikipedia';
 
 	let videoElement: HTMLVideoElement;
 	let canvasElement: HTMLCanvasElement;
@@ -36,11 +37,29 @@
 			return closestBird(firstResultLine);
 		}
 	);
+
+	const wikipediaPage = asyncDerrived(ocrResultStore, (birdName) => {
+		return wiki.page(birdName);
+	});
+
+	const wikipediaImages = asyncDerrived(wikipediaPage, (page) => {
+		return wiki.images(page);
+	});
 </script>
 
 <main>
 	<div class="bird-info">
-		{$ocrResultStore}
+		<a href={$wikipediaPage?.fullurl}>
+			{$ocrResultStore}
+		</a>
+
+		<ul class="images">
+			{#if $wikipediaImages}
+				{#each $wikipediaImages as wikiImage}
+					<img height="100" src={wikiImage.url} alt={wikiImage.title} />
+				{/each}
+			{/if}
+		</ul>
 	</div>
 
 	<div class="identifier">
@@ -77,6 +96,16 @@
 
 	.bird-info {
 		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.images {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		list-style: none;
+		padding: 0;
 	}
 
 	.identifier {
