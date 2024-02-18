@@ -1,26 +1,32 @@
-import { createWorker } from 'tesseract.js';
+import { createWorker, type Worker } from 'tesseract.js';
 
-const worker = await createWorker('eng');
-
-worker.setParameters({
-	// Provide the characters to look for
-	tessedit_char_whitelist: [
-		// Upper-case letters
-		'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-		// Lower-case letters
-		'abcdefghijklmnopqrstuvwxyz',
-		// Whitespace
-		' ',
-		// Punctuation
-		"'"
-	].join('')
-});
+let worker: Worker | null = null;
 
 interface IndicatorConfig {
 	x: number;
 	y: number;
 	width: number;
 	height: number;
+}
+
+async function initializeWorker(): Promise<Worker> {
+	const worker = await createWorker('eng');
+
+	worker.setParameters({
+		// Provide the characters to look for
+		tessedit_char_whitelist: [
+			// Upper-case letters
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+			// Lower-case letters
+			'abcdefghijklmnopqrstuvwxyz',
+			// Whitespace
+			' ',
+			// Punctuation
+			"'"
+		].join('')
+	});
+
+	return worker;
 }
 
 export function populateCanvas(
@@ -74,6 +80,10 @@ export async function ocr(
 	indicator: IndicatorConfig,
 	canvas?: HTMLCanvasElement
 ): Promise<string> {
+	if (!worker) {
+		worker = await initializeWorker();
+	}
+
 	const snapshot = getSnapshot(video, indicator, canvas);
 	const {
 		data: { text }
