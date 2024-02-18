@@ -41,10 +41,6 @@
 	const wikipediaPage = asyncDerrived(ocrResultStore, (birdName) => {
 		return wiki.page(birdName);
 	});
-
-	const wikipediaImages = asyncDerrived(wikipediaPage, (page) => {
-		return wiki.images(page);
-	});
 </script>
 
 <main>
@@ -52,14 +48,6 @@
 		<a href={$wikipediaPage?.fullurl}>
 			{$ocrResultStore}
 		</a>
-
-		<ul class="images">
-			{#if $wikipediaImages}
-				{#each $wikipediaImages as wikiImage}
-					<img height="100" src={wikiImage.url} alt={wikiImage.title} />
-				{/each}
-			{/if}
-		</ul>
 	</div>
 
 	<div class="identifier">
@@ -99,13 +87,6 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-	}
-
-	.images {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		list-style: none;
-		padding: 0;
 	}
 
 	.identifier {
