@@ -19,5 +19,7 @@ export const load: PageLoad = async ({ params }) => {
 				message: 'Not found'
 			});
 		}
+
+		throw e;
 	}
 };
