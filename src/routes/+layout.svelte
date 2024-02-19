@@ -7,7 +7,6 @@
 	import { ocr } from '$lib/tesseract';
 	import { fromAsyncIterable, asyncDerrived } from '$lib/store';
 	import { closestBird } from '$lib/birds';
-	import * as wiki from '$lib/wikipedia';
 
 	let videoElement: HTMLVideoElement;
 	let canvasElement: HTMLCanvasElement;
