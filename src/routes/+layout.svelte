@@ -41,7 +41,7 @@
 
 <div class="layout">
 	<div class="left-column">
-		<h1>Birdify</h1>
+		<h1><a href="/">Birdify</a></h1>
 
 		<div class="identifier">
 			<div class="camera-stream">
@@ -133,6 +133,10 @@
 	h1 {
 		font-family: CardenioModern;
 		text-align: center;
+
+		& a {
+			text-decoration: none;
+		}
 	}
 
 	.identifier {
