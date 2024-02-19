@@ -6,16 +6,18 @@
 	$: ({ page, images, summary } = data);
 </script>
 
-<h1>{page.title}</h1>
+<div>
+	<h1>{page.title}</h1>
 
-<p>{summary.extract}</p>
-<a href={page.fullurl}>View More on Wikipedia</a>
+	<p>{summary.extract}</p>
+	<a href={page.fullurl}>View More on Wikipedia</a>
 
-<ul class="images">
-	{#each images as image}
-		<li><img class="image" alt={image.title} src={image.url} /></li>
-	{/each}
-</ul>
+	<ul class="images">
+		{#each images as image}
+			<li><img class="image" alt={image.title} src={image.url} /></li>
+		{/each}
+	</ul>
+</div>
 
 <style>
 	.images {
