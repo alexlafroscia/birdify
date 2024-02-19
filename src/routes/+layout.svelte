@@ -144,7 +144,7 @@
 		grid-template-columns: 300px 1fr;
 
 		/* Match page height */
-		height: 100vh;
+		height: 100dvh;
 	}
 
 	.left-column {
