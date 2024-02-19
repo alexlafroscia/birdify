@@ -16,7 +16,14 @@
 	 */
 	export let videoElement: HTMLVideoElement;
 
+	let unrecoverableError: string | null = null;
+
 	onMount(async () => {
+		if (!window.isSecureContext) {
+			unrecoverableError = 'Currently browsing from an insecure context';
+			return;
+		}
+
 		const mediaStream = await navigator.mediaDevices.getUserMedia({
 			audio: false,
 			video: true
@@ -33,13 +40,26 @@
 	});
 </script>
 
-<video
-	bind:this={videoElement}
-	{height}
-	{width}
-	{...$$restProps}
-	on:loadeddata={({ currentTarget }) => {
-		currentTarget.play();
-	}}
->
-</video>
+{#if unrecoverableError}
+	<p class="unrecoverable-error">{unrecoverableError}</p>
+{:else}
+	<video
+		bind:this={videoElement}
+		{height}
+		{width}
+		playsinline
+		{...$$restProps}
+		on:loadeddata={({ currentTarget }) => {
+			currentTarget.play();
+		}}
+	>
+	</video>
+{/if}
+
+<style>
+	.unrecoverable-error {
+		color: var(--antiflash-white);
+		background-color: var(--rojo);
+		padding: 1em;
+	}
+</style>
