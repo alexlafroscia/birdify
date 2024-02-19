@@ -60,6 +60,12 @@
 			</div>
 		</div>
 
+		<div class="spacer" />
+
+		<ul class="links">
+			<li><a class="link" href="/credits">Credits</a></li>
+		</ul>
+
 		<div class="debug-canvas">
 			<canvas bind:this={canvasElement} />
 		</div>
@@ -90,6 +96,10 @@
 		--air-superiority-blue: hsla(210, 29%, 64%, 1);
 		--rojo: hsla(0, 74%, 52%, 1);
 		--ash-gray: hsla(152, 24%, 73%, 1);
+		--steel-blue: hsla(210, 42%, 50%, 1);
+
+		/* Default to sans-serif font */
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	:global(body) {
@@ -109,22 +119,25 @@
 	.left-column {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: stretch;
+		padding-right: 1em;
+		padding-left: 1em;
 
 		/* When displaying as a sidebar.. */
 		@media (min-width: 600px) {
 			border-right: 1px solid var(--ash-gray);
 			margin-right: 1em;
-			padding-right: 1em;
 		}
 	}
 
 	h1 {
 		font-family: CardenioModern;
+		text-align: center;
 	}
 
 	.identifier {
 		position: relative;
+		text-align: center;
 	}
 
 	.indicator {
@@ -138,5 +151,23 @@
 
 	.debug-canvas {
 		display: none;
+	}
+
+	.links {
+		padding: 0;
+		list-style: none;
+	}
+
+	.link {
+		color: var(--silver-lake-blue);
+		text-decoration: none;
+
+		&:visited {
+			color: var(--silver-lake-blue);
+		}
+	}
+
+	.spacer {
+		flex-grow: 1;
 	}
 </style>
