@@ -21,3 +21,6 @@ vite.config.ts.timestamp-*
 # Data
 data/
 src/data/bord-cards.csv
+
+# Deployment
+.vercel
