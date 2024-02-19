@@ -1,5 +1,9 @@
-<main>
-	<h1>Credits</h1>
+<script lang="ts">
+	import DetailPageWrapper from '$lib/components/DetailPageWrapper.svelte';
+</script>
+
+<DetailPageWrapper>
+	<h1 slot="title">Credits</h1>
 
 	<ul>
 		<li>
@@ -7,4 +11,4 @@
 			Wingspan
 		</li>
 	</ul>
-</main>
+</DetailPageWrapper>

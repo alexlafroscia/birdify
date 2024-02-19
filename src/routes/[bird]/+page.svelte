@@ -1,4 +1,5 @@
 <script lang="ts">
+	import DetailPageWrapper from '$lib/components/DetailPageWrapper.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -6,8 +7,8 @@
 	$: ({ page, images, summary } = data);
 </script>
 
-<div>
-	<h1>{page.title}</h1>
+<DetailPageWrapper>
+	<h1 slot="title">{page.title}</h1>
 
 	<p>{summary.extract}</p>
 	<a href={page.fullurl}>View More on Wikipedia</a>
@@ -17,7 +18,7 @@
 			<li><img class="image" alt={image.title} src={image.url} /></li>
 		{/each}
 	</ul>
-</div>
+</DetailPageWrapper>
 
 <style>
 	.images {
