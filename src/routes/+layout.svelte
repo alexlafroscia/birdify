@@ -36,6 +36,17 @@
 			return closestBird(firstResultLine);
 		}
 	);
+
+	/* === Debug Menu === */
+	let debugMenuVisible = false;
+
+	function showDebugMenu() {
+		debugMenuVisible = true;
+	}
+
+	function hideDebugMenu() {
+		debugMenuVisible = false;
+	}
 </script>
 
 <div class="layout">
@@ -63,9 +74,16 @@
 
 		<ul class="links">
 			<li><a class="link" href="/credits">Credits</a></li>
+			<li><button type="button" on:click={showDebugMenu}>Show Debug Menu</button></li>
 		</ul>
 
-		<div class="debug-canvas">
+		<div class="debug-menu" class:visible={debugMenuVisible}>
+			<div class="header">
+				<p>{$ocrResultStore}</p>
+
+				<button on:click={hideDebugMenu}>Close</button>
+			</div>
+
 			<canvas bind:this={canvasElement} />
 		</div>
 	</div>
@@ -104,6 +122,10 @@
 	:global(body) {
 		background-color: var(--antiflash-white);
 		margin: 0;
+	}
+
+	:global(button) {
+		cursor: pointer;
 	}
 
 	.layout {
@@ -152,13 +174,20 @@
 		width: var(--width);
 	}
 
-	.debug-canvas {
-		display: none;
-	}
-
 	.links {
 		padding: 0;
 		list-style: none;
+
+		& > * ~ * {
+			padding-top: 0.5em;
+		}
+
+		& button {
+			color: var(--silver-lake-blue);
+			border: none;
+			padding: 0;
+			font-size: 1em;
+		}
 	}
 
 	.link {
@@ -172,5 +201,30 @@
 
 	.spacer {
 		flex-grow: 1;
+	}
+
+	.debug-menu {
+		/* Full-bleed */
+		margin-left: -1em;
+		margin-right: -1em;
+		padding: 1em;
+
+		background-color: var(--rojo);
+		color: var(--antiflash-white);
+
+		&:not(.visible) {
+			display: none;
+		}
+
+		& p {
+			margin: 0;
+		}
+
+		& .header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1em;
+		}
 	}
 </style>
