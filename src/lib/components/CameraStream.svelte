@@ -8,8 +8,8 @@
 		videoElement: HTMLVideoElement;
 	}
 
-	export let height: number = 300;
-	export let width: number = 200;
+	export let width: number = 250;
+	export let height: number = (width * 3) / 2;
 
 	/**
 	 * Allow the "parent component" to access the `video` element by binding to this
@@ -40,23 +40,30 @@
 	});
 </script>
 
-{#if unrecoverableError}
-	<p class="unrecoverable-error">{unrecoverableError}</p>
-{:else}
-	<video
-		bind:this={videoElement}
-		{height}
-		{width}
-		playsinline
-		{...$$restProps}
-		on:loadeddata={({ currentTarget }) => {
-			currentTarget.play();
-		}}
-	>
-	</video>
-{/if}
+<div class="border-radius">
+	{#if unrecoverableError}
+		<p class="unrecoverable-error">{unrecoverableError}</p>
+	{:else}
+		<video
+			class="border-radius"
+			bind:this={videoElement}
+			{height}
+			{width}
+			playsinline
+			{...$$restProps}
+			on:loadeddata={({ currentTarget }) => {
+				currentTarget.play();
+			}}
+		>
+		</video>
+	{/if}
+</div>
 
 <style>
+	.border-radius {
+		border-radius: 10px;
+	}
+
 	.unrecoverable-error {
 		color: var(--antiflash-white);
 		background-color: var(--rojo);
