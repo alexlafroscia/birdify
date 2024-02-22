@@ -1,20 +1,16 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
-	import CameraStream from '$lib/components/CameraStream.svelte';
+	import CameraStream, { type ReadResult } from '$lib/components/CameraStream.svelte';
 
 	let canvasElement: HTMLCanvasElement;
-	let ocrResult = '';
+	let ocrResult: ReadResult | undefined = undefined;
 
 	/* === Debug Menu === */
 	let debugMenuVisible = false;
 
-	function showDebugMenu() {
-		debugMenuVisible = true;
-	}
-
-	function hideDebugMenu() {
-		debugMenuVisible = false;
+	function toggleDebugMenu() {
+		debugMenuVisible = !debugMenuVisible;
 	}
 </script>
 
@@ -26,7 +22,7 @@
 			<CameraStream
 				{canvasElement}
 				on:read={({ detail }) => {
-					ocrResult = detail.raw;
+					ocrResult = detail;
 				}}
 			/>
 		</div>
@@ -35,18 +31,25 @@
 
 		<ul class="links">
 			<li><a class="link" href="/credits">Credits</a></li>
-			<li><button type="button" on:click={showDebugMenu}>Show Debug Menu</button></li>
+			<li><button type="button" on:click={toggleDebugMenu}>Toggle Debug Menu</button></li>
 		</ul>
 
 		{#if debugMenuVisible}
 			<div class="debug-menu" transition:slide>
-				<div class="header">
-					<p>{ocrResult}</p>
-
-					<button on:click={hideDebugMenu}>Close</button>
-				</div>
-
-				<canvas bind:this={canvasElement} />
+				{#if ocrResult}
+					<dl>
+						<dt>Raw</dt>
+						<dd>{ocrResult.raw}</dd>
+						<dt>Guess</dt>
+						<dd>{ocrResult.guess}</dd>
+						<dt>Preview</dt>
+						<dd class="preview">
+							<canvas bind:this={canvasElement} />
+						</dd>
+					</dl>
+				{:else}
+					<p>Start Capture to Debug</p>
+				{/if}
 			</div>
 		{/if}
 	</div>
@@ -163,21 +166,31 @@
 		margin-right: -1em;
 		padding: 1em;
 
-		background-color: var(--rojo);
-		color: var(--antiflash-white);
+		border-top: 2px solid var(--dun);
+		background: rgb(from var(--dun) r g b / 30%);
 
-		/* Hard-coded height required for slide transition */
-		height: 71.5px;
-
-		& p {
+		& dl {
+			display: grid;
+			grid-template-columns: min-content 1fr;
+			gap: 0.2em 1em;
 			margin: 0;
 		}
 
-		& .header {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			margin-bottom: 1em;
+		& dt {
+			font-weight: bold;
+		}
+
+		& dd {
+			margin: 0;
+		}
+
+		& .preview {
+			height: 50px;
+		}
+
+		& p {
+			margin: 0;
+			text-align: center;
 		}
 	}
 </style>

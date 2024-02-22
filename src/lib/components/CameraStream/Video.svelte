@@ -1,3 +1,10 @@
+<script lang="ts" context="module">
+	export interface ReadResult {
+		raw: string;
+		guess: string;
+	}
+</script>
+
 <script lang="ts">
 	import requestAnimationFrames from 'request-animation-frames';
 	import { onMount, onDestroy, createEventDispatcher } from 'svelte';
@@ -7,10 +14,7 @@
 
 	const dispatch = createEventDispatcher<{
 		start: void;
-		read: {
-			raw: string;
-			guess: string;
-		};
+		read: ReadResult;
 		match: string;
 		error: string;
 	}>();

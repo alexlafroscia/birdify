@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+	export type { ReadResult } from './CameraStream/Video.svelte';
+</script>
+
 <script lang="ts">
 	import CardPositionIndicator from './CardPositionIndicator.svelte';
 	import Video from './CameraStream/Video.svelte';
