@@ -13,9 +13,6 @@
 		match: string;
 	}>();
 
-	export let width: number = 250;
-	export let height: number = (width * 3) / 2;
-
 	export let indicator: IndicatorConfig;
 
 	/**
@@ -39,6 +36,11 @@
 		});
 
 		videoElement.srcObject = mediaStream;
+
+		const { height: videoElementHeightPx, width: videoElementWidthPx } =
+			window.getComputedStyle(videoElement);
+		const height = parseInt(videoElementHeightPx.replace('px', ''), 10);
+		const width = parseInt(videoElementWidthPx.replace('px', ''), 10);
 
 		// Set the dimensions of the video stream
 		const primaryTrack = mediaStream.getTracks()[0];
@@ -71,10 +73,8 @@
 	<p class="unrecoverable-error">{unrecoverableError}</p>
 {:else}
 	<video
-		class="border-radius"
 		bind:this={videoElement}
-		{height}
-		{width}
+		class="border-radius"
 		playsinline
 		on:loadeddata={({ currentTarget }) => {
 			currentTarget.play();
@@ -92,5 +92,10 @@
 
 	.border-radius {
 		border-radius: var(--border-radius);
+	}
+
+	video {
+		aspect-ratio: 2/3;
+		max-width: 100%;
 	}
 </style>

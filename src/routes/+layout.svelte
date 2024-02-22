@@ -37,6 +37,8 @@
 				<CameraStream
 					bind:videoElement
 					on:read={({ detail }) => {
+						console.log(detail);
+
 						ocrResult = detail.raw;
 					}}
 				/>

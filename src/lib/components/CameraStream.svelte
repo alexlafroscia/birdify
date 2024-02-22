@@ -8,9 +8,6 @@
 		videoElement: HTMLVideoElement;
 	}
 
-	export let width: number = 250;
-	export let height: number = (width * 3) / 2;
-
 	const indicator = {
 		x: 85,
 		y: 15,
@@ -32,9 +29,9 @@
 
 <div class="border-radius camera-stream">
 	{#if isCapturing}
-		<Video bind:videoElement {indicator} {height} {width} on:match on:read />
+		<Video bind:videoElement {indicator} on:match on:read />
 	{:else}
-		<div class="border-radius placeholder" style={`--height: ${height}px; --width: ${width}px`}>
+		<div class="border-radius placeholder">
 			<button on:click={startCapturingVideo}>Start Capture</button>
 		</div>
 	{/if}
@@ -52,6 +49,8 @@
 	}
 
 	.placeholder {
+		aspect-ratio: 2/3;
+
 		border: 2px solid var(--steel-blue);
 		background-color: var(---air-superiority-blue);
 
