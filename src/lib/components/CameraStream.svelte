@@ -13,6 +13,8 @@
 
 	let errorMessage: string | undefined;
 
+	let showIndicator = false;
+
 	let isCapturing = false;
 
 	function startCapturingVideo() {
@@ -30,21 +32,26 @@
 			{indicator}
 			on:match
 			on:read
+			on:start={() => {
+				showIndicator = true;
+			}}
 			on:error={({ detail }) => {
 				errorMessage = detail;
 			}}
 		/>
-		<div
-			class="indicator"
-			style={`
-				--x: ${indicator.x}px;
-				--y: ${indicator.y}px;
-				--height: ${indicator.height}px;
-				--width: ${indicator.width}px;
-			`}
-		>
-			<CardPositionIndicator />
-		</div>
+		{#if showIndicator}
+			<div
+				class="indicator"
+				style={`
+					--x: ${indicator.x}px;
+					--y: ${indicator.y}px;
+					--height: ${indicator.height}px;
+					--width: ${indicator.width}px;
+				`}
+			>
+				<CardPositionIndicator />
+			</div>
+		{/if}
 	{:else}
 		<div class="border-radius placeholder">
 			<button on:click={startCapturingVideo}>Start Capture</button>

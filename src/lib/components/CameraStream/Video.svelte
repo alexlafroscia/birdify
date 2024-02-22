@@ -6,6 +6,7 @@
 	import { closestBird } from '$lib/birds';
 
 	const dispatch = createEventDispatcher<{
+		start: void;
 		read: {
 			raw: string;
 			guess: string;
@@ -75,6 +76,7 @@
 	on:loadeddata={({ currentTarget }) => {
 		currentTarget.play();
 		isPlaying = true;
+		dispatch('start');
 	}}
 >
 </video>
