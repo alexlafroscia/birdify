@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	export interface ReadResult {
 		raw: string;
-		guess: string;
+		closest: string;
 	}
 </script>
 
@@ -11,6 +11,7 @@
 
 	import { ocr, type IndicatorConfig } from '$lib/tesseract';
 	import { closestBird } from '$lib/birds';
+	import { Capture } from '$lib/capture';
 
 	const dispatch = createEventDispatcher<{
 		start: void;
@@ -52,7 +53,9 @@
 			width
 		});
 
-		for await (const _tick of requestAnimationFrames()) {
+		const capture = new Capture();
+
+		for await (const timeStamp of requestAnimationFrames()) {
 			if (haltOcrController.signal.aborted) {
 				break;
 			}
@@ -60,10 +63,16 @@
 			let result = await ocr(videoElement, indicator, canvasElement ?? undefined);
 			result = result.split('\n')[0];
 
+			capture.addScan(result, timeStamp);
+
 			dispatch('read', {
 				raw: result,
-				guess: closestBird(result)
+				closest: closestBird(result)
 			});
+
+			if (capture.isComplete) {
+				dispatch('match', capture.result);
+			}
 		}
 	});
 

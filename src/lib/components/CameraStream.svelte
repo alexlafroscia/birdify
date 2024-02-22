@@ -39,6 +39,9 @@
 			on:start={() => {
 				showIndicator = true;
 			}}
+			on:match={() => {
+				isCapturing = false;
+			}}
 			on:error={({ detail }) => {
 				errorMessage = detail;
 			}}

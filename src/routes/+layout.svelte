@@ -5,6 +5,7 @@
 
 	let canvasElement: HTMLCanvasElement;
 	let ocrResult: ReadResult | undefined = undefined;
+	let match: string | undefined = undefined;
 
 	/* === Debug Menu === */
 	let debugMenuVisible = false;
@@ -24,6 +25,11 @@
 				on:read={({ detail }) => {
 					ocrResult = detail;
 				}}
+				on:match={({ detail }) => {
+					console.log(detail);
+
+					match = detail;
+				}}
 			/>
 		</div>
 
@@ -40,8 +46,10 @@
 					<dl>
 						<dt>Raw</dt>
 						<dd>{ocrResult.raw}</dd>
-						<dt>Guess</dt>
-						<dd>{ocrResult.guess}</dd>
+						<dt>Closest</dt>
+						<dd>{ocrResult.closest}</dd>
+						<dt>Match</dt>
+						<dd>{match}</dd>
 						<dt>Preview</dt>
 						<dd class="preview">
 							<canvas bind:this={canvasElement} />
