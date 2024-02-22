@@ -11,6 +11,7 @@
 			guess: string;
 		};
 		match: string;
+		error: string;
 	}>();
 
 	export let indicator: IndicatorConfig;
@@ -20,13 +21,11 @@
 	 */
 	export let videoElement: HTMLVideoElement;
 
-	let unrecoverableError: string | null = null;
-
 	let haltOcrController = new AbortController();
 
 	onMount(async function () {
 		if (!window.isSecureContext) {
-			unrecoverableError = 'Currently browsing from an insecure context';
+			dispatch('error', 'Currently browsing from an insecure context');
 			return;
 		}
 
@@ -69,33 +68,23 @@
 	});
 </script>
 
-{#if unrecoverableError}
-	<p class="unrecoverable-error">{unrecoverableError}</p>
-{:else}
-	<video
-		bind:this={videoElement}
-		class="border-radius"
-		playsinline
-		on:loadeddata={({ currentTarget }) => {
-			currentTarget.play();
-		}}
-	>
-	</video>
-{/if}
+<video
+	bind:this={videoElement}
+	class="border-radius"
+	playsinline
+	on:loadeddata={({ currentTarget }) => {
+		currentTarget.play();
+	}}
+>
+</video>
 
 <style>
-	.unrecoverable-error {
-		color: var(--antiflash-white);
-		background-color: var(--rojo);
-		padding: 1em;
-	}
-
 	.border-radius {
 		border-radius: var(--border-radius);
 	}
 
 	video {
-		aspect-ratio: 2/3;
+		height: 100%;
 		max-width: 100%;
 	}
 </style>

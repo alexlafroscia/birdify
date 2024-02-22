@@ -15,6 +15,8 @@
 		width: 90
 	};
 
+	let errorMessage: string | undefined;
+
 	/**
 	 * Allow the "parent component" to access the `video` element by binding to this
 	 */
@@ -27,9 +29,20 @@
 	}
 </script>
 
-<div class="border-radius camera-stream">
-	{#if isCapturing}
-		<Video bind:videoElement {indicator} on:match on:read />
+<div class="border-radius camera-stream" class:error={!!errorMessage}>
+	{#if errorMessage}
+		<p>Error!</p>
+		<p>{errorMessage}</p>
+	{:else if isCapturing}
+		<Video
+			bind:videoElement
+			{indicator}
+			on:match
+			on:read
+			on:error={({ detail }) => {
+				errorMessage = detail;
+			}}
+		/>
 	{:else}
 		<div class="border-radius placeholder">
 			<button on:click={startCapturingVideo}>Start Capture</button>
@@ -45,19 +58,23 @@
 	}
 
 	.camera-stream {
+		aspect-ratio: 2/3;
 		position: relative;
 	}
 
-	.placeholder {
-		aspect-ratio: 2/3;
+	.error {
+		border: 2px solid var(--rojo);
+		background: rgb(from var(--rojo) r g b / 30%);
+		color: var(--rojo);
+		font-weight: bold;
+	}
 
+	.placeholder {
 		border: 2px solid var(--steel-blue);
 		background-color: var(---air-superiority-blue);
 
 		display: flex;
 		flex-direction: column;
-
-		height: var(--height);
-		width: var(--width);
+		height: 100%;
 	}
 </style>
