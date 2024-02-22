@@ -1,12 +1,5 @@
 <script lang="ts">
-	import type { HTMLVideoAttributes } from 'svelte/elements';
 	import Video from './CameraStream/Video.svelte';
-
-	interface $$Props extends HTMLVideoAttributes {
-		height?: number;
-		width?: number;
-		videoElement: HTMLVideoElement;
-	}
 
 	const indicator = {
 		x: 85,
@@ -16,11 +9,6 @@
 	};
 
 	let errorMessage: string | undefined;
-
-	/**
-	 * Allow the "parent component" to access the `video` element by binding to this
-	 */
-	export let videoElement: HTMLVideoElement;
 
 	let isCapturing = false;
 
@@ -35,7 +23,6 @@
 		<p>{errorMessage}</p>
 	{:else if isCapturing}
 		<Video
-			bind:videoElement
 			{indicator}
 			on:match
 			on:read

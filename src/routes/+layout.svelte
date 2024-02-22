@@ -4,7 +4,6 @@
 	import CameraStream from '$lib/components/CameraStream.svelte';
 	import CardPositionIndicator from '$lib/components/CardPositionIndicator.svelte';
 
-	let videoElement: HTMLVideoElement;
 	let canvasElement: HTMLCanvasElement;
 
 	const indicator = {
@@ -35,7 +34,6 @@
 		<div class="identifier">
 			<div class="camera-stream">
 				<CameraStream
-					bind:videoElement
 					on:read={({ detail }) => {
 						console.log(detail);
 

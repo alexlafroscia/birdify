@@ -16,10 +16,7 @@
 
 	export let indicator: IndicatorConfig;
 
-	/**
-	 * Allow the "parent component" to access the `video` element by binding to this
-	 */
-	export let videoElement: HTMLVideoElement;
+	let videoElement: HTMLVideoElement;
 
 	let haltOcrController = new AbortController();
 
