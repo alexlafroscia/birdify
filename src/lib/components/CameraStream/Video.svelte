@@ -15,6 +15,7 @@
 	}>();
 
 	export let indicator: IndicatorConfig;
+	export let canvasElement: HTMLCanvasElement | null | undefined = undefined;
 
 	let videoElement: HTMLVideoElement;
 
@@ -50,7 +51,7 @@
 				break;
 			}
 
-			let result = await ocr(videoElement, indicator);
+			let result = await ocr(videoElement, indicator, canvasElement ?? undefined);
 			result = result.split('\n')[0];
 
 			dispatch('read', {

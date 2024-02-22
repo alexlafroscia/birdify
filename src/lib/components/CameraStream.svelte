@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Video from './CameraStream/Video.svelte';
 
+	export let canvasElement: HTMLCanvasElement | null | undefined = undefined;
+
 	const indicator = {
 		x: 85,
 		y: 15,
@@ -23,6 +25,7 @@
 		<p>{errorMessage}</p>
 	{:else if isCapturing}
 		<Video
+			{canvasElement}
 			{indicator}
 			on:match
 			on:read

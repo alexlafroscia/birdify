@@ -34,6 +34,7 @@
 		<div class="identifier">
 			<div class="camera-stream">
 				<CameraStream
+					{canvasElement}
 					on:read={({ detail }) => {
 						ocrResult = detail.raw;
 					}}
