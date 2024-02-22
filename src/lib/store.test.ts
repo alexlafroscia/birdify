@@ -2,13 +2,33 @@ import '@ungap/with-resolvers';
 import { expect, test, vi } from 'vitest';
 import { get } from 'svelte/store';
 
+import { fromStream, fromAsyncIterable, asyncDerrived, list } from './store';
+
 function wait(ms: number = 0) {
 	return new Promise((resolve) => {
 		setTimeout(resolve, ms);
 	});
 }
 
-import { fromStream, fromAsyncIterable, asyncDerrived } from './store';
+test('list', async () => {
+	const store = list<number>();
+
+	const listener = vi.fn();
+	store.subscribe(listener);
+
+	expect(listener).toHaveBeenCalledTimes(1);
+	expect(listener).toHaveBeenLastCalledWith([]);
+
+	store.push(1);
+
+	expect(listener).toHaveBeenCalledTimes(2);
+	expect(listener).toHaveBeenLastCalledWith([1]);
+
+	store.push(2);
+
+	expect(listener).toHaveBeenCalledTimes(3);
+	expect(listener).toHaveBeenLastCalledWith([1, 2]);
+});
 
 test('fromStream', async () => {
 	const store = fromStream(

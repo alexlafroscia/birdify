@@ -1,4 +1,18 @@
-import { type Readable, readable, derived } from 'svelte/store';
+import { type Readable, readable, derived, writable } from 'svelte/store';
+
+export function list<T>(): Readable<T[]> & { push(value: T): void } {
+	const store = writable<T[]>([]);
+
+	return {
+		subscribe: store.subscribe,
+		push(value) {
+			store.update((current) => {
+				current.push(value);
+				return current;
+			});
+		}
+	};
+}
 
 export function fromAsyncIterable<T>(iterable: AsyncIterable<T>): Readable<T> {
 	const iterator = iterable[Symbol.asyncIterator]();
