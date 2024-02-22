@@ -35,8 +35,6 @@
 			<div class="camera-stream">
 				<CameraStream
 					on:read={({ detail }) => {
-						console.log(detail);
-
 						ocrResult = detail.raw;
 					}}
 				/>
