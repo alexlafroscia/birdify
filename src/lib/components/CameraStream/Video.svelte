@@ -18,6 +18,7 @@
 	export let canvasElement: HTMLCanvasElement | null | undefined = undefined;
 
 	let videoElement: HTMLVideoElement;
+	let isPlaying = false;
 
 	let haltOcrController = new AbortController();
 
@@ -73,9 +74,16 @@
 	playsinline
 	on:loadeddata={({ currentTarget }) => {
 		currentTarget.play();
+		isPlaying = true;
 	}}
 >
 </video>
+
+{#if !isPlaying}
+	<div class="loading border-radius">
+		<p>Loading...</p>
+	</div>
+{/if}
 
 <style>
 	.border-radius {
@@ -85,5 +93,17 @@
 	video {
 		height: 100%;
 		max-width: 100%;
+	}
+
+	.loading {
+		background: rgb(from var(--ash-gray) r g b / 30%);
+		border: 2px solid var(--ash-gray);
+		font-weight: bold;
+
+		position: absolute;
+		top: 0;
+
+		height: 100%;
+		width: 100%;
 	}
 </style>
