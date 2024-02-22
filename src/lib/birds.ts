@@ -9,3 +9,7 @@ export function closestBird(input: string): string {
 	// input array is empty
 	return closestMatch(input, birdNames)!;
 }
+
+export function urlFor(input: string): string {
+	return `/` + encodeURIComponent(input);
+}

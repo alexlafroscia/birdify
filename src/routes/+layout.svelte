@@ -1,16 +1,20 @@
 <script lang="ts">
 	import '../app.css';
 
+	import { goto as navigateTo } from '$app/navigation';
 	import { slide } from 'svelte/transition';
 
 	import CameraStream, { type ReadResult } from '$lib/components/CameraStream.svelte';
+	import { urlFor as urlForResult } from '$lib/birds';
+	import { list } from '$lib/store';
 
-	let canvasElement: HTMLCanvasElement;
-	let ocrResult: ReadResult | undefined = undefined;
-	let match: string | undefined = undefined;
+	const results = list<string>();
 
 	/* === Debug Menu === */
+
 	let debugMenuVisible = false;
+	let canvasElement: HTMLCanvasElement;
+	let ocrResult: ReadResult | undefined = undefined;
 
 	function toggleDebugMenu() {
 		debugMenuVisible = !debugMenuVisible;
@@ -28,12 +32,21 @@
 					ocrResult = detail;
 				}}
 				on:match={({ detail }) => {
-					console.log(detail);
-
-					match = detail;
+					results.push(detail);
+					navigateTo(urlForResult(detail));
 				}}
 			/>
 		</div>
+
+		<ul class="links">
+			{#each $results as result}
+				<li>
+					<a class="link" href={`/${encodeURIComponent(result)}`}>
+						{result}
+					</a>
+				</li>
+			{/each}
+		</ul>
 
 		<div class="spacer" />
 
@@ -50,8 +63,6 @@
 						<dd>{ocrResult.raw}</dd>
 						<dt>Closest</dt>
 						<dd>{ocrResult.closest}</dd>
-						<dt>Match</dt>
-						<dd>{match}</dd>
 						<dt>Preview</dt>
 						<dd class="preview">
 							<canvas bind:this={canvasElement} />
