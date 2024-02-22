@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CardPositionIndicator from './CardPositionIndicator.svelte';
 	import Video from './CameraStream/Video.svelte';
 
 	export let canvasElement: HTMLCanvasElement | null | undefined = undefined;
@@ -33,6 +34,17 @@
 				errorMessage = detail;
 			}}
 		/>
+		<div
+			class="indicator"
+			style={`
+				--x: ${indicator.x}px;
+				--y: ${indicator.y}px;
+				--height: ${indicator.height}px;
+				--width: ${indicator.width}px;
+			`}
+		>
+			<CardPositionIndicator />
+		</div>
 	{:else}
 		<div class="border-radius placeholder">
 			<button on:click={startCapturingVideo}>Start Capture</button>
@@ -50,6 +62,15 @@
 	.camera-stream {
 		aspect-ratio: 2/3;
 		position: relative;
+	}
+
+	.indicator {
+		position: absolute;
+
+		top: var(--y);
+		left: var(--x);
+		height: var(--height);
+		width: var(--width);
 	}
 
 	.error {

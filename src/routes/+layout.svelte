@@ -2,17 +2,8 @@
 	import { slide } from 'svelte/transition';
 
 	import CameraStream from '$lib/components/CameraStream.svelte';
-	import CardPositionIndicator from '$lib/components/CardPositionIndicator.svelte';
 
 	let canvasElement: HTMLCanvasElement;
-
-	const indicator = {
-		x: 85,
-		y: 15,
-		height: 30,
-		width: 90
-	};
-
 	let ocrResult = '';
 
 	/* === Debug Menu === */
@@ -32,25 +23,12 @@
 		<h1><a href="/">Birdify</a></h1>
 
 		<div class="identifier">
-			<div class="camera-stream">
-				<CameraStream
-					{canvasElement}
-					on:read={({ detail }) => {
-						ocrResult = detail.raw;
-					}}
-				/>
-			</div>
-			<div
-				class="indicator"
-				style={`
-				--x: ${indicator.x}px;
-				--y: ${indicator.y}px;
-				--height: ${indicator.height}px;
-				--width: ${indicator.width}px;
-			`}
-			>
-				<CardPositionIndicator />
-			</div>
+			<CameraStream
+				{canvasElement}
+				on:read={({ detail }) => {
+					ocrResult = detail.raw;
+				}}
+			/>
 		</div>
 
 		<div class="spacer" />
@@ -148,15 +126,6 @@
 	.identifier {
 		position: relative;
 		text-align: center;
-	}
-
-	.indicator {
-		position: absolute;
-
-		top: var(--y);
-		left: var(--x);
-		height: var(--height);
-		width: var(--width);
 	}
 
 	.links {
