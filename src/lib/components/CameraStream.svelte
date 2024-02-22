@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLVideoAttributes } from 'svelte/elements';
-	import { onMount } from 'svelte';
+	import Video from './CameraStream/Video.svelte';
 
 	interface $$Props extends HTMLVideoAttributes {
 		height?: number;
@@ -11,62 +11,54 @@
 	export let width: number = 250;
 	export let height: number = (width * 3) / 2;
 
+	const indicator = {
+		x: 85,
+		y: 15,
+		height: 30,
+		width: 90
+	};
+
 	/**
 	 * Allow the "parent component" to access the `video` element by binding to this
 	 */
 	export let videoElement: HTMLVideoElement;
 
-	let unrecoverableError: string | null = null;
+	let isCapturing = false;
 
-	onMount(async () => {
-		if (!window.isSecureContext) {
-			unrecoverableError = 'Currently browsing from an insecure context';
-			return;
-		}
-
-		const mediaStream = await navigator.mediaDevices.getUserMedia({
-			audio: false,
-			video: true
-		});
-
-		videoElement.srcObject = mediaStream;
-
-		// Set the dimensions of the video stream
-		const primaryTrack = mediaStream.getTracks()[0];
-		primaryTrack.applyConstraints({
-			height,
-			width
-		});
-	});
+	function startCapturingVideo() {
+		isCapturing = true;
+	}
 </script>
 
-<div class="border-radius">
-	{#if unrecoverableError}
-		<p class="unrecoverable-error">{unrecoverableError}</p>
+<div class="border-radius camera-stream">
+	{#if isCapturing}
+		<Video bind:videoElement {indicator} {height} {width} on:match on:read />
 	{:else}
-		<video
-			class="border-radius"
-			bind:this={videoElement}
-			{height}
-			{width}
-			playsinline
-			{...$$restProps}
-			on:loadeddata={({ currentTarget }) => {
-				currentTarget.play();
-			}}
-		>
-		</video>
+		<div class="border-radius placeholder" style={`--height: ${height}px; --width: ${width}px`}>
+			<button on:click={startCapturingVideo}>Start Capture</button>
+		</div>
 	{/if}
 </div>
 
 <style>
 	.border-radius {
-		border-radius: 10px;
+		--border-radius: 10px;
+
+		border-radius: var(--border-radius);
 	}
 
-	.unrecoverable-error {
-		color: var(--antiflash-white);
-		background-color: var(--rojo);
-		padding: 1em;
+	.camera-stream {
+		position: relative;
+	}
+
+	.placeholder {
+		border: 2px solid var(--steel-blue);
+		background-color: var(---air-superiority-blue);
+
+		display: flex;
+		flex-direction: column;
+
+		height: var(--height);
+		width: var(--width);
 	}
 </style>

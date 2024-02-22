@@ -2,7 +2,7 @@ import { createWorker, type Worker } from 'tesseract.js';
 
 let worker: Worker | null = null;
 
-interface IndicatorConfig {
+export interface IndicatorConfig {
 	x: number;
 	y: number;
 	width: number;

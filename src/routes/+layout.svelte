@@ -1,13 +1,8 @@
 <script lang="ts">
-	import requestAnimationFrames from 'request-animation-frames';
 	import { slide } from 'svelte/transition';
 
 	import CameraStream from '$lib/components/CameraStream.svelte';
 	import CardPositionIndicator from '$lib/components/CardPositionIndicator.svelte';
-
-	import { ocr } from '$lib/tesseract';
-	import { fromAsyncIterable, asyncDerrived } from '$lib/store';
-	import { closestBird } from '$lib/birds';
 
 	let videoElement: HTMLVideoElement;
 	let canvasElement: HTMLCanvasElement;
@@ -19,31 +14,7 @@
 		width: 90
 	};
 
-	const ocrResultStore = asyncDerrived(
-		fromAsyncIterable(requestAnimationFrames()),
-		async (_timestamp) => {
-			// DOM nodes will take a tick to be present
-			if (!videoElement) {
-				return '';
-			}
-
-			const result = await ocr(
-				videoElement,
-				indicator,
-				// `canvasElement` will be `null` if the debug menu has closed
-				// if that's the case, we want to pass `undefined` through instead so that
-				// the default argument (a fresh `canvas` element) is used instead
-				canvasElement ?? undefined
-			);
-
-			// The scientific name is right under the "common" name
-			// We want to ignore that if it's there
-			const [firstResultLine] = result.split('\n');
-
-			// Match the OCR input against the bird name DB
-			return closestBird(firstResultLine);
-		}
-	);
+	let ocrResult = '';
 
 	/* === Debug Menu === */
 	let debugMenuVisible = false;
@@ -63,7 +34,12 @@
 
 		<div class="identifier">
 			<div class="camera-stream">
-				<CameraStream bind:videoElement />
+				<CameraStream
+					bind:videoElement
+					on:read={({ detail }) => {
+						ocrResult = detail.raw;
+					}}
+				/>
 			</div>
 			<div
 				class="indicator"
@@ -88,7 +64,7 @@
 		{#if debugMenuVisible}
 			<div class="debug-menu" transition:slide>
 				<div class="header">
-					<p>{$ocrResultStore}</p>
+					<p>{ocrResult}</p>
 
 					<button on:click={hideDebugMenu}>Close</button>
 				</div>
