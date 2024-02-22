@@ -53,8 +53,12 @@
 			</div>
 		{/if}
 	{:else}
-		<div class="border-radius placeholder">
-			<button on:click={startCapturingVideo}>Start Capture</button>
+		<div class="border-radius start-button-container">
+			<button class="start-button border-radius" on:click={startCapturingVideo}>
+				<span class="icon">📸</span>
+				<br />
+				Start Capture
+			</button>
 		</div>
 	{/if}
 </div>
@@ -87,12 +91,26 @@
 		font-weight: bold;
 	}
 
-	.placeholder {
+	.start-button-container {
 		border: 2px solid var(--steel-blue);
-		background-color: var(---air-superiority-blue);
+		background: rgb(from var(--steel-blue) r g b / 30%);
+
+		color: var(--steel-blue);
 
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+	}
+
+	.start-button {
+		border: 0;
+		background: transparent;
+		height: 100%;
+		font-size: unset;
+		font-weight: bold;
+	}
+
+	.icon {
+		font-size: 2rem;
 	}
 </style>
