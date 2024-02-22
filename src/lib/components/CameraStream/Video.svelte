@@ -43,7 +43,7 @@
 
 		// Set the dimensions of the video stream
 		const primaryTrack = mediaStream.getTracks()[0];
-		primaryTrack.applyConstraints({
+		await primaryTrack.applyConstraints({
 			height,
 			width
 		});
