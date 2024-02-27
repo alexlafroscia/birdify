@@ -443,9 +443,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:^2.0.0":
-  version: 2.5.0
-  resolution: "@sveltejs/kit@npm:2.5.0"
+"@sveltejs/kit@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "@sveltejs/kit@npm:2.5.2"
   dependencies:
     "@types/cookie": "npm:^0.6.0"
     cookie: "npm:^0.6.0"
@@ -465,7 +465,7 @@ __metadata:
     vite: ^5.0.3
   bin:
     svelte-kit: svelte-kit.js
-  checksum: 10c0/216bdf2b75d22d47f6295813b45f62df2d80eee2bd6441a46d2b5c3108cfbd63514d16a1e53bb98c862f72a5d27d3e5e6df3a53f1db08ee54ec45255738178f7
+  checksum: 10c0/9d07f9d31c9c2ea3d43f08c0f13f81f009d1c9513ffba5140f5620a683ef814664b38186b43391d99316b1e95cf65c01fc29e50f61d47efd0cfa0d4681c31514
   languageName: node
   linkType: hard
 
@@ -482,7 +482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/vite-plugin-svelte@npm:^3.0.0":
+"@sveltejs/vite-plugin-svelte@npm:^3.0.2":
   version: 3.0.2
   resolution: "@sveltejs/vite-plugin-svelte@npm:3.0.2"
   dependencies:
@@ -819,8 +819,8 @@ __metadata:
   resolution: "birdify@workspace:."
   dependencies:
     "@sveltejs/adapter-vercel": "npm:^5.1.0"
-    "@sveltejs/kit": "npm:^2.0.0"
-    "@sveltejs/vite-plugin-svelte": "npm:^3.0.0"
+    "@sveltejs/kit": "npm:^2.5.2"
+    "@sveltejs/vite-plugin-svelte": "npm:^3.0.2"
     "@types/ungap__with-resolvers": "link:./types/ungap__with-resolvers"
     "@ungap/with-resolvers": "npm:^0.1.0"
     closest-match: "patch:closest-match@npm%3A1.3.3#~/.yarn/patches/closest-match-npm-1.3.3-c9baeca09a.patch"
