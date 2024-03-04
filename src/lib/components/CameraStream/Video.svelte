@@ -36,22 +36,19 @@
 
 		const mediaStream = await navigator.mediaDevices.getUserMedia({
 			audio: false,
-			video: true
+			video: {
+				aspectRatio: {
+					exact: 2 / 3
+				},
+				facingMode: 'environment'
+			}
 		});
+
+		const [track] = mediaStream.getTracks();
+		console.log(track.getSettings());
 
 		videoElement.srcObject = mediaStream;
 
-		const { height: videoElementHeightPx, width: videoElementWidthPx } =
-			window.getComputedStyle(videoElement);
-		const height = parseInt(videoElementHeightPx.replace('px', ''), 10);
-		const width = parseInt(videoElementWidthPx.replace('px', ''), 10);
-
-		// Set the dimensions of the video stream
-		const primaryTrack = mediaStream.getTracks()[0];
-		await primaryTrack.applyConstraints({
-			height,
-			width
-		});
 
 		const capture = new Capture();
 
