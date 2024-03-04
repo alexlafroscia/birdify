@@ -12,6 +12,7 @@
 	import { ocr, type IndicatorConfig } from '$lib/tesseract';
 	import { closestBird } from '$lib/birds';
 	import { Capture } from '$lib/capture';
+	import { withResolvers } from '$lib/promise';
 
 	const dispatch = createEventDispatcher<{
 		start: void;
@@ -23,6 +24,7 @@
 	export let indicator: IndicatorConfig;
 	export let canvasElement: HTMLCanvasElement | null | undefined = undefined;
 
+	let videoPlayBegin = withResolvers();
 	let videoElement: HTMLVideoElement;
 	let isPlaying = false;
 
@@ -49,6 +51,7 @@
 
 		videoElement.srcObject = mediaStream;
 
+		await videoPlayBegin.promise;
 
 		const capture = new Capture();
 
@@ -84,6 +87,7 @@
 	class="border-radius"
 	playsinline
 	on:loadeddata={({ currentTarget }) => {
+		videoPlayBegin.resolve();
 		currentTarget.play();
 		isPlaying = true;
 		dispatch('start');
