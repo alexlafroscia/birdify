@@ -4,6 +4,7 @@
 	import { goto as navigateTo } from '$app/navigation';
 	import { slide } from 'svelte/transition';
 
+	import { Layout, Sidebar } from '$lib/components/Layout';
 	import CameraStream, { type ReadResult } from '$lib/components/CameraStream.svelte';
 	import { urlFor as urlForResult } from '$lib/birds';
 	import { list } from '$lib/store';
@@ -21,8 +22,8 @@
 	}
 </script>
 
-<div class="layout">
-	<div class="left-column">
+<Layout>
+	<Sidebar>
 		<h1><a href="/">Birdify</a></h1>
 
 		<div class="identifier">
@@ -73,35 +74,12 @@
 				{/if}
 			</div>
 		{/if}
-	</div>
+	</Sidebar>
 
 	<slot />
-</div>
+</Layout>
 
 <style>
-	.layout {
-		display: grid;
-		grid-template-areas: 'sidebar detail';
-		grid-template-columns: 300px 1fr;
-
-		/* Match page height */
-		height: 100dvh;
-	}
-
-	.left-column {
-		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-		padding-right: 1em;
-		padding-left: 1em;
-
-		/* When displaying as a sidebar.. */
-		@media (min-width: 600px) {
-			border-right: 1px solid var(--ash-gray);
-			margin-right: 1em;
-		}
-	}
-
 	h1 {
 		font-family: CardenioModern;
 		text-align: center;

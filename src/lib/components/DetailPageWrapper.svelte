@@ -1,14 +1,20 @@
-<main>
-	<header>
-		<a class="back-nav-link" href="/">Back</a>
+<script lang="ts">
+	import { Detail } from '$lib/components/Layout';
+</script>
 
-		<div class="title">
-			<slot name="title" />
-		</div>
-	</header>
+<Detail>
+	<main>
+		<header>
+			<a class="back-nav-link" href="/">Back</a>
 
-	<slot />
-</main>
+			<div class="title">
+				<slot name="title" />
+			</div>
+		</header>
+
+		<slot />
+	</main>
+</Detail>
 
 <style>
 	header {
