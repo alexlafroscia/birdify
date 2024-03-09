@@ -4,31 +4,28 @@
 
 	export let data: PageData;
 
-	$: ({ page, images, summary } = data);
+	$: ({ page, summary } = data);
+	$: ({ originalimage: image } = summary);
+
+	$: console.log(summary);
 </script>
 
 <DetailPageWrapper>
 	<h1 slot="title">{page.title}</h1>
 
+	<img class="image" src={image.source} />
+
 	<p>{summary.extract}</p>
 	<a href={page.fullurl}>View More on Wikipedia</a>
-
-	<ul class="images">
-		{#each images as image}
-			<li><img class="image" alt={image.title} src={image.url} /></li>
-		{/each}
-	</ul>
 </DetailPageWrapper>
 
 <style>
-	.images {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		list-style: none;
-		padding: 0;
+	h1 {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	.image {
-		width: 100px;
+		max-width: 100%;
 	}
 </style>

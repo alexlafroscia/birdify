@@ -20,6 +20,7 @@
 	header {
 		display: flex;
 		align-items: center;
+		margin-bottom: 1em;
 	}
 
 	.back-nav-link {

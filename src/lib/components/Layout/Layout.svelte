@@ -8,7 +8,7 @@
 		display: grid;
 		height: 100dvh;
 
-		grid-template-columns: 300px;
+		grid-template-columns: 100%;
 		justify-content: center;
 
 		@media (min-width: 600px) {

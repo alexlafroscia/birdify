@@ -13,7 +13,6 @@
 		/* When displaying as a sidebar.. */
 		@media (min-width: 600px) {
 			border-right: 1px solid var(--ash-gray);
-			margin-right: 1em;
 		}
 	}
 

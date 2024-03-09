@@ -5,3 +5,9 @@
 <EmptyDetail>
 	<p>Scan a Bird Card to View Details</p>
 </EmptyDetail>
+
+<style>
+	p {
+		text-align: center;
+	}
+</style>

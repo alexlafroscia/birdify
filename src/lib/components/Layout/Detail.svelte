@@ -4,5 +4,6 @@
 
 <style>
 	.detail {
+		margin: 1em;
 	}
 </style>
