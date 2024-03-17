@@ -35,8 +35,9 @@
 		"tesseract.js": "^5.0.4",
 		"wikipedia": "^2.1.2"
 	},
-	"packageManager": "yarn@4.1.0",
+	"packageManager": "yarn@4.1.1",
 	"volta": {
-		"node": "18.19.1"
+		"node": "18.19.1",
+		"yarn": "4.1.1"
 	}
 }
